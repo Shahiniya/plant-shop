@@ -37,18 +37,18 @@ const HeroSection = () => {
                 <div className="container">
                   <div className="wrapper">
                     <div className="shopnow">
-                      <h5>WELCOME TO GREENSHOP</h5>
-                      <h1> LET IS MAKE A BETTER PLANET </h1>
+                      <h4>WELCOME TO GREENSHOP</h4>
+                      <h1> LET IS MAKE A BETTER <span className='planet'>PLANET</span></h1>
                      <h5>We are an online plant shop offering a 
                      wide range of cheap and trendy plants. Use our 
                      plants to create an unique Urban Jungle. 
                      Order your favorite plants!</h5>
-                     <button>Shop now</button>
+                     <button>SHOP NOW</button>
                     </div>
 
                     <div className="flowers">
-                      <img src={bigFlower} alt='flower' />
-                      <img src={smallFlower} alt='flower' />
+                      <img src={bigFlower} className='bigflower' alt='flower' />
+                      <img src={smallFlower} className="smallflower" alt='flower' />
 
                     </div>
                   </div>

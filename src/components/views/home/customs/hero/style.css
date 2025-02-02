@@ -1,17 +1,72 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+.container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+  margin: 0 auto;
+  background-color: #f5f5f5f0;
 }
 
-.container{
-    max-width: 1200px;
-    width:100%;
-    padding: 20px;
-    margin:0 auto;
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f5f5f580;
 }
 
-.wrapper{
-    display: flex;
-    justify-content: space-between;
+.shopnow h4 {
+  font-size: 14px;
+  font-weight: 500px;
+  color: #3d3d3d;
+  line-height: 16px;
+  margin-top: 30px;
+}
+
+.shopnow h1 {
+  font-size: 70px;
+  font-weight: 1100px;
+  color: #3d3d3d;
+  line-height: 70px;
+  width: 557px;
+}
+
+.planet {
+  color: #46a358;
+  font-size: 70px;
+  font-weight: 700px;
+  line-height: 70px;
+}
+
+.shopnow h5 {
+  font-size: 14px;
+  font-weight: 400px;
+  color: #727272;
+  line-height: 24px;
+  width: 550px;
+}
+
+.shopnow button {
+  width: 120px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  background-color: #46a358;
+  color: aliceblue;
+  font-size: 14px;
+  font-weight: 100px;
+  margin-top: 40px;
+}
+
+.bigflower {
+  height: 518px;
+  width: 518px;
+  margin-left: 50px;
+  position: relative;
+  margin-top: -30px;
+}
+
+.smallflower {
+  height: 135px;
+  width: 135px;
+  position: absolute;
+  top: 368px;
+  left: 668px;
 }

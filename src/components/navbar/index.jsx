@@ -8,8 +8,8 @@ import logout from '../../assets/navbar/Logout.svg'
 function Navbar() {
   return (
     <header>
-      <div className="container">
-        <div className="wrapper">
+      <div className="container1">
+        <div className="wrapper1">
           <div className="greenshop">
             <img src={greenshopIcon} alt="greenshop" />
             <h2>GREENSHOP</h2>
