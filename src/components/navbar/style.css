@@ -14,6 +14,8 @@
 .wrapper{
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid #46A35880;
+    padding-bottom: 10px;
 }
 
 .greenshop{
@@ -23,10 +25,14 @@
     height: 34px;
 }
 
+.greenshop img{
+    width:25px;
+}
 .greenshop h2{
-    
+    margin-top:5px;
     font-size: 20px;
     color:#46A358;
+    font-weight: 700px;
 }
 
 .navbar{
@@ -39,7 +45,7 @@
 .navbar h1{
    font-weight:700px;
     font-size: 16px;
-    color:#46A358;
+    color:#3D3D3D;
 }
 
 .searchbar{
@@ -49,15 +55,35 @@
     height: 45px;
 }
 
+.searchbar img{
+    width:25px;
+    height:25px;
+   margin: 4px 5px ;
+   color:#7d7c7c;
+
+   
+}
 .searchbar .logout{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     width: 100px;
-    height: 45px;
+    height: 32px;
+    background-color: #46A358;
+    border-radius: 5px;
+
+
+}
+.searchbar .logout img{
+   margin: 4px 5px ;
+   width:20px;
+  fill:#e9e4e4;
+
 }
 
 .searchbar .logout h1{
-    font-size: 20px;
-    color:#46A358;
+    font-size: 16px;
+    color:#FFFF;
+   margin: 4px 5px ;
+
 }
 

@@ -1,12 +1,17 @@
 import "./style.css";
-// import {greenshop-icon} from './greenshop-icon'
+import greenshopIcon from '../../assets/navbar/greenshop-icon.svg'
+import searchIcon from '../../assets/navbar/search-icon.svg'
+import bascketIcon from '../../assets/navbar/bascket-icon.svg'
+import logout from '../../assets/navbar/Logout.svg'
+
+
 function Navbar() {
   return (
     <header>
       <div className="container">
         <div className="wrapper">
           <div className="greenshop">
-            <img src="" alt="greenshop" />
+            <img src={greenshopIcon} alt="greenshop" />
             <h2>GREENSHOP</h2>
           </div>
           <div className="navbar">
@@ -16,10 +21,10 @@ function Navbar() {
             <h1>Blogs</h1>
           </div>
           <div className="searchbar">
-            <img src="./assets/navbar/search-icon" alt="search-icon" />
-            <img src="" alt="bascket-iscon" />
+            <img src={searchIcon} alt="search-icon" />
+            <img src={bascketIcon} alt="bascket-iscon" />
             <div className="logout">
-              <img src="" alt="log-out" />
+              <img src={logout} alt="log-out" />
               <h1>Login</h1>
             </div>
           </div>

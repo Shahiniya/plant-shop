@@ -1,8 +1,95 @@
+import nature from "../../../../../assets/hero/nature.png";
+import "./style.css";
+import bigFlower from '../../../../../assets/hero/big-flower.png'
+import smallFlower from '../../../../../assets/hero/small-flower.png'
+
 
 const HeroSection = () => {
   return (
-    <div>HeroSection</div>
-  )
-}
+    <section id="hero-section">
+      <div className="container">
+        <div className="wrapper">
+          <div id="carouselExampleIndicators" className="carousel slide">
+            <div className="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="0"
+                className="active"
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="2"
+                aria-label="Slide 3"
+              ></button>
+            </div>
+            <div className="carousel-inner">
+              <div className="carousel-item active">
+                <div className="container">
+                  <div className="wrapper">
+                    <div className="shopnow">
+                      <h5>WELCOME TO GREENSHOP</h5>
+                      <h1> LET IS MAKE A BETTER PLANET </h1>
+                     <h5>We are an online plant shop offering a 
+                     wide range of cheap and trendy plants. Use our 
+                     plants to create an unique Urban Jungle. 
+                     Order your favorite plants!</h5>
+                     <button>Shop now</button>
+                    </div>
 
-export default HeroSection
+                    <div className="flowers">
+                      <img src={bigFlower} alt='flower' />
+                      <img src={smallFlower} alt='flower' />
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="carousel-item">
+                <img src={nature} className="d-block w-100" alt="..." />
+              </div>
+              <div className="carousel-item">
+                <img src={nature} className="d-block w-100" alt="..." />
+              </div>
+            </div>
+            <button
+              className="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="prev"
+            >
+              <span
+                className="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span className="visually-hidden">Previous</span>
+            </button>
+            <button
+              className="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="next"
+            >
+              <span
+                className="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span className="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default HeroSection;
