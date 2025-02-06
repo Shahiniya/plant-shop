@@ -38,7 +38,7 @@ const HeroSection = () => {
                   <div className="wrapper">
                     <div className="shopnow">
                       <h4>WELCOME TO GREENSHOP</h4>
-                      <h1> LET IS MAKE A BETTER <span className='planet'>PLANET</span></h1>
+                      <h1>LET'S MAKE A BETTER <span className='planet'>PLANET</span></h1>
                      <h5>We are an online plant shop offering a 
                      wide range of cheap and trendy plants. Use our 
                      plants to create an unique Urban Jungle. 
