@@ -79,11 +79,11 @@ const HomePlantsSection = () => {
 <div className="categorySale" ></div>
 </div>
 <div className="card-container" >
-<div className="card" >
+
  {
   cards.map((card) => {
     return(
-    <div key={card.id} >
+    <div className="card" key={card.id} >
     <img src={card.img} alt='plantPhoto' />
     <div>
     <h6>{card.name}</h6>
@@ -94,8 +94,6 @@ const HomePlantsSection = () => {
    
    ) })
  }
-</div>
-
 </div>
       </div>
     </div>
