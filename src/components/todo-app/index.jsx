@@ -1,77 +1,162 @@
-import {useState} from 'react'
+import { useState } from "react";
 
-const initialState=[
+const initialState = [
   {
-    id:'1',
-    name:'john Smith',
-    number: '2563256325',
-    completed:false
+    id: "1",
+    title: "HTML",
+    completed: false,
   },
   {
-    id:'1',
-    name:'john Smith',
-    number: '2563256325',
-    completed:false
+    id: "2",
+    title: "CSS",
+    completed: false,
   },
   {
-    id:'1',
-    name:'john Smith',
-    number: '2563256325',
-    completed:false
+    id: "3",
+    title: "JavaScript",
+    completed: false,
+  },
+  {
+    id: "4",
+    title: "React JS",
+    completed: false,
+  },
+];
+
+const TodoManagerApp = () => {
+  const [todos, setTodos] = useState(initialState);
+  const [todo, setTodo] = useState("");
+  const [selectedTodo, setSelectedTodo] = useState({});
+
+  const onInputChange = (event) => {
+    setTodo(event.target.value);
+  };
+
+  const addTodoHanler = () => {
+    if (!todo.length) {
+      return;
+    }
+
+    const newTodo = {
+      id: String(todos?.length + 1),
+      title: todo,
+      completed: false,
+    };
+
+    setTodos((prev) => [...prev, newTodo]);
+    setTodo("");
+  };
+
+  const handleCompleteTask = (todoId) => {
+    const completed = todos.map((todo) =>
+      todo.id === todoId ? { ...todo, completed: !todo.completed } : todo
+    );
+
+    setTodos(completed);
+  };
+
+  const handleRemoveTodo = (todoId) => {
+    const data = todos.filter((todo) => todo.id !== todoId);
+
+    setTodos(data);
+  };
+
+  const onSearchInputChange = (event) => {
+    const filteredData = initialState.filter((todo) =>
+      todo.title.toLowerCase().includes(event.target.value.toLowerCase())
+    );
+
+    setTodos(filteredData);
+  };
+
+  const handleSelectTodo = (todo) => {
+    setSelectedTodo(todo);
+  };
+
+  const onEditChange = (event) => {
+    setSelectedTodo((prev) => ({...prev, title: event.target.value}))
   }
-]
 
-const TodoApp = () => {
-  //  const [count,setCount] = useState(0)
+  const onSave = () => {
+    const changedData = todos.map((todo) => todo.id === selectedTodo.id ? selectedTodo : todo)
 
-  //  const incrementCount = () => {
-  //  setCount((prev) => prev+1)
-  //  }
-
-  const [todos,setTodos] = useState(initialState)
-const [todo,setTodo] = useState('') 
-
-const onInputChange = (event) => {
-setTodo(event.target.value)
-}
-
-const addHanler = () => {
-  if(!todo.length){
-    return
-  } 
-
-  const newTodo = { 
-    id: todo?.id +1,
-    name:todo,
-  completed:false
+    setTodos(changedData)
+    setSelectedTodo({})
   }
-  setTodos((prev)=> [...prev,newTodo] )
-  setTodo('')
-}
 
   return (
-    <div>
-    <h2>Todo App</h2>
-    <div>
-      <input type='text' placeholder='Title' onChange={onInputChange} value={todo} />
-      <buttton onClick={addHanler} >Add todo</buttton>
-    </div>
+    <div
+      className='card p-4'
+      style={{ maxWidth: "500px", margin: "0 auto", marginTop: "40px" }}
+    >
+      <h2>Todo App</h2>
 
-    {/* <div>
-      <h1>{count}</h1> <button onClick={incrementCount} >++</button>
-    </div> */}
-      <ul>
-      {
-        todos.map((todo,idx)=>{
-          return <li key={todo?.id || idx} >
-          {idx+1}.{todo.name}{' '}
-          <input type='checkbox' value={todo.completed} /> </li>
-        })
-      }
-             
+      <input
+        className='form-control'
+        type='text'
+        placeholder='Search...'
+        onChange={onSearchInputChange}
+      />
+
+      <ul style={{ marginTop: "10px", padding: 0 }}>
+        {todos.map((todo, idx) => {
+          return (
+            <li key={todo?.id || idx} className='card mb-2 p-2'>
+              <div className='d-flex justify-content-between'>
+                <div className='d-flex px-2 py-2'>
+                  <input
+                    type='checkbox'
+                    value={todo.completed}
+                    checked={todo.completed}
+                    className='form-check-input'
+                    style={{ marginRight: "4px" }}
+                    onChange={() => handleCompleteTask(todo.id)}
+                  />
+                  {selectedTodo?.id == todo.id ? (
+                    <input value={selectedTodo?.title} onChange={onEditChange} />
+                  ) : (
+                    <span>{todo.title}</span>
+                  )}
+                </div>
+
+                <div className='d-flex gap-1'>
+                  {selectedTodo?.id == todo.id ? (
+                    <button className='btn btn-success' onClick={onSave}>Save</button>
+                  ) : (
+                    <button
+                      className='btn btn-info'
+                      onClick={() => handleSelectTodo(todo)}
+                    >
+                      Edit
+                    </button>
+                  )}
+                  <button
+                    className='btn btn-danger'
+                    onClick={() => handleRemoveTodo(todo.id)}
+                  >
+                    Remove
+                  </button>
+                </div>
+              </div>
+            </li>
+          );
+        })}
       </ul>
-    </div>
-  )
-}
 
-export default TodoApp
+      <div className='d-flex align-items-center gap-2'>
+        <input
+          className='form-control'
+          type='text'
+          placeholder='Title'
+          onChange={onInputChange}
+          value={todo}
+        />
+        <button className='btn btn-primary' onClick={addTodoHanler}>
+          Add
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default TodoManagerApp;
